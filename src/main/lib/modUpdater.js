@@ -10,7 +10,7 @@ const config_js_1 = require("../config.js");
 const execPromise = promisify(exec);
 
 
-const UPDATE_CHECK_URL = `https://api.github.com/repos/TheKing-OfTime/YandexMusicModClient/releases/latest`;
+const UPDATE_CHECK_URL = `https://api.github.com/repos/idnaumov/yandex-music-custom-client/releases/latest`;
 const APP_ASAR_PATH = path.join(
   process.env.LOCALAPPDATA,
   "\\Programs\\YandexMusic\\resources\\app.asar",

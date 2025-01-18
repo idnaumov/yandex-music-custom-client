@@ -158,28 +158,12 @@ async function setActivity(
     (deepShareTrackUrl || webShareTrackUrl) &&
     (settings()?.showButtons ?? true)
   ) {
-    if (!(settings()?.overrideDeepLinksExperiment ?? false)) {
-      activityObject.buttons = [
-        {
-          label: "Open in Yandex Music",
-          url: deepShareTrackUrl,
-        },
-      ];
-    } else if (settings()?.showGitHubButton ?? true) {
-      activityObject.buttons = [
-        {
-          label: "Open in Yandex Music",
-          url: deepShareTrackUrl,
-        },
-      ];
-    } else {
-      activityObject.buttons = [
-        {
-          label: "Open in Yandex Music",
-          url: deepShareTrackUrl,
-        },
-      ];
-    }
+    activityObject.buttons = [
+      {
+        label: "Open in Yandex Music",
+        url: deepShareTrackUrl,
+      },
+    ];
   }
 
   if (compareActivities(activityObject)) return true;

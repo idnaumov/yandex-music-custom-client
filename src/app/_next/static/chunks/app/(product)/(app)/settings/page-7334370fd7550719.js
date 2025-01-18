@@ -253,29 +253,6 @@
             );
             window.nativeSettings.set("modFeatures.discordRPC.showButtons", e);
           }, []),
-          onDiscordOverrideDeepLinksExperimentToggle = (0, d.useCallback)(
-            async (e) => {
-              console.log(
-                "modFeatures.discordRPC.overrideDeepLinksExperiment toggled. Value: ",
-                e,
-              );
-              window.nativeSettings.set(
-                "modFeatures.discordRPC.overrideDeepLinksExperiment",
-                e,
-              );
-            },
-            [],
-          ),
-          onDiscordShowGitHubButtonToggle = (0, d.useCallback)(async (e) => {
-            console.log(
-              "modFeatures.discordRPC.showGitHubButton toggled. Value: ",
-              e,
-            );
-            window.nativeSettings.set(
-              "modFeatures.discordRPC.showGitHubButton",
-              e,
-            );
-          }, []),
           onDiscordShowSmallIconToggle = (0, d.useCallback)(async (e) => {
             console.log(
               "modFeatures.discordRPC.showSmallIcon toggled. Value: ",
@@ -347,30 +324,6 @@
                   onChange: onDiscordShowSmallIconToggle,
                   isChecked: window.nativeSettings.get(
                     "modFeatures.discordRPC.showSmallIcon",
-                  ),
-                }),
-              }),
-              (0, n.jsx)("li", {
-                className: H().item,
-                children: (0, n.jsx)(P, {
-                  title: "Переопределить эксперимент Глубоких ссылок",
-                  description:
-                    "Уберёт ссылку открывающую приложение т.к. это сделает ссылка на сайт",
-                  onChange: onDiscordOverrideDeepLinksExperimentToggle,
-                  isChecked: window.nativeSettings.get(
-                    "modFeatures.discordRPC.overrideDeepLinksExperiment",
-                  ),
-                }),
-              }),
-              (0, n.jsx)("li", {
-                className: H().item,
-                children: (0, n.jsx)(P, {
-                  title: "Отображать кнопку на Гитхаб",
-                  description:
-                    "Если предыдущий пункт включён, отображает кнопку установки мода",
-                  onChange: onDiscordShowGitHubButtonToggle,
-                  isChecked: window.nativeSettings.get(
-                    "modFeatures.discordRPC.overrideDeepLinksExperiment",
                   ),
                 }),
               }),
