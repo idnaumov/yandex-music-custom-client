@@ -164,10 +164,6 @@ async function setActivity(
           label: "Open in Yandex Music",
           url: deepShareTrackUrl,
         },
-        {
-          label: "Open in Yandex Music",
-          url: deepShareTrackUrl,
-        },
       ];
     } else if (settings()?.showGitHubButton ?? true) {
       activityObject.buttons = [
