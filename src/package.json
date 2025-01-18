@@ -8,21 +8,22 @@
     "main": "main/index.js",
     "dependencies": {
         "@formatjs/icu-messageformat-parser": "~2.7.8",
+        "discord-rpc": "^4.0.1",
         "electron-log": "~5.2.0",
         "electron-store": "~8.2.0",
         "electron-updater": "~6.3.4",
+        "fast-uri": "^3.0.2",
         "intl-messageformat": "~10.5.14",
         "node-cron": "~3.0.3",
+        "node-id3": "^0.2.6",
         "semver": "~7.6.3",
-        "uuid": "~9.0.1",
-        "fast-uri": "^3.0.2"
+        "uuid": "~9.0.1"
     },
     "devDependencies": {
         "@electron/fuses": "~1.8.0",
         "@electron/notarize": "~2.4.0",
         "@types/node-cron": "~3.0.11",
         "@types/semver": "~7.5.8",
-        "@yandex-chats/signer": "~0.0.3",
         "electron": "~32.1.0",
         "js-yaml": "~4.1.0"
     },

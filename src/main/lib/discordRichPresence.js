@@ -161,30 +161,26 @@ async function setActivity(
     if (!(settings()?.overrideDeepLinksExperiment ?? false)) {
       activityObject.buttons = [
         {
-          label: "Listen in Yandex Music App",
+          label: "Open in Yandex Music",
           url: deepShareTrackUrl,
         },
         {
-          label: "Listen in Yandex Music Web",
-          url: webShareTrackUrl,
+          label: "Open in Yandex Music",
+          url: deepShareTrackUrl,
         },
       ];
     } else if (settings()?.showGitHubButton ?? true) {
       activityObject.buttons = [
         {
-          label: "Listen on Yandex Music",
-          url: webShareTrackUrl,
-        },
-        {
-          label: "Install from GitHub",
-          url: GITHUB_LINK,
+          label: "Open in Yandex Music",
+          url: deepShareTrackUrl,
         },
       ];
     } else {
       activityObject.buttons = [
         {
-          label: "Listen on Yandex Music",
-          url: webShareTrackUrl,
+          label: "Open in Yandex Music",
+          url: deepShareTrackUrl,
         },
       ];
     }
@@ -226,7 +222,7 @@ tryConnect();
 
 const getArtist = (artistsArray) => {
   if (!artistsArray?.[0]?.name) return undefined;
-  let artistsLabel = "by " + artistsArray[0].name;
+  let artistsLabel = artistsArray[0].name;
   artistsArray.shift();
   artistsArray.forEach((artist) => {
     artistsLabel += ", " + artist.name;
