@@ -131,6 +131,36 @@
                     }),
                   }),
                 }),
+                (0, n.jsx)("li", {
+                  className: u().item,
+                  children: (0, n.jsx)(_.rU, {
+                    className: u().link,
+                    target: "_blank",
+                    href: "https://github.com/TheKing-OfTime/YandexMusicModClient",
+                    children: (0, n.jsx)(c.Caption, {
+                      type: "controls",
+                      variant: "span",
+                      size: "l",
+                      weight: "medium",
+                      children: "Репозиторий модификации на GitHub",
+                    }),
+                  }),
+                }),
+                (0, n.jsx)("li", {
+                  className: u().item,
+                  children: (0, n.jsx)(_.rU, {
+                    className: u().link,
+                    target: "_blank",
+                    href: "https://boosty.to/thekingoftime/donate",
+                    children: (0, n.jsx)(c.Caption, {
+                      type: "controls",
+                      variant: "span",
+                      size: "l",
+                      weight: "medium",
+                      children: "Поддержать автора модификации",
+                    }),
+                  }),
+                }),
               ],
             }),
             (0, n.jsx)(c.Caption, {
@@ -163,6 +193,13 @@
               variant: "div",
               size: "xs",
               children: e({ id: "desktop.app-revision" }, { revision: l }),
+            }),
+            (0, n.jsx)(c.Caption, {
+              className: u().versionText,
+              type: "controls",
+              variant: "div",
+              size: "xs",
+              children: "YandexMusicModClient " + window.MOD_VERSION,
             }),
           ],
         });
@@ -253,6 +290,29 @@
             );
             window.nativeSettings.set("modFeatures.discordRPC.showButtons", e);
           }, []),
+          onDiscordOverrideDeepLinksExperimentToggle = (0, d.useCallback)(
+            async (e) => {
+              console.log(
+                "modFeatures.discordRPC.overrideDeepLinksExperiment toggled. Value: ",
+                e,
+              );
+              window.nativeSettings.set(
+                "modFeatures.discordRPC.overrideDeepLinksExperiment",
+                e,
+              );
+            },
+            [],
+          ),
+          onDiscordShowGitHubButtonToggle = (0, d.useCallback)(async (e) => {
+            console.log(
+              "modFeatures.discordRPC.showGitHubButton toggled. Value: ",
+              e,
+            );
+            window.nativeSettings.set(
+              "modFeatures.discordRPC.showGitHubButton",
+              e,
+            );
+          }, []),
           onDiscordShowSmallIconToggle = (0, d.useCallback)(async (e) => {
             console.log(
               "modFeatures.discordRPC.showSmallIcon toggled. Value: ",
@@ -324,6 +384,30 @@
                   onChange: onDiscordShowSmallIconToggle,
                   isChecked: window.nativeSettings.get(
                     "modFeatures.discordRPC.showSmallIcon",
+                  ),
+                }),
+              }),
+              (0, n.jsx)("li", {
+                className: H().item,
+                children: (0, n.jsx)(P, {
+                  title: "Переопределить эксперимент Глубоких ссылок",
+                  description:
+                    "Уберёт ссылку открывающую приложение т.к. это сделает ссылка на сайт",
+                  onChange: onDiscordOverrideDeepLinksExperimentToggle,
+                  isChecked: window.nativeSettings.get(
+                    "modFeatures.discordRPC.overrideDeepLinksExperiment",
+                  ),
+                }),
+              }),
+              (0, n.jsx)("li", {
+                className: H().item,
+                children: (0, n.jsx)(P, {
+                  title: "Отображать кнопку на Гитхаб",
+                  description:
+                    "Если предыдущий пункт включён, отображает кнопку установки мода",
+                  onChange: onDiscordShowGitHubButtonToggle,
+                  isChecked: window.nativeSettings.get(
+                    "modFeatures.discordRPC.overrideDeepLinksExperiment",
                   ),
                 }),
               }),
@@ -670,7 +754,8 @@
             ? j({ id: "equalizer.enabled" })
             : j({ id: "equalizer.disabled" }),
           z = (0, d.useMemo)(
-            () => j({ id: "desktop.app-version-short" }, { version: e }),
+            () =>
+              `${j({ id: "desktop.app-version-short" }, { version: e })} / Мод ${window.MOD_VERSION}`,
             [!0, j, e],
           ),
           T = (0, d.useMemo)(
